@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEU TITULO</title>
+    <link href="captiveportal-bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('captiveportal-bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .feedback {
+            font-size: 0.9rem;
+            color: red;
+        }
+        .feedback.valid {
+            color: green;
+        }
+    </style>
+    <script>
+        function validarCPF(cpf) {
+            cpf = cpf.replace(/[^\d]+/g, ''); // Remove caracteres não numéricos
+            if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false; // Verifica tamanho e sequência
+
+            let soma = 0, resto;
+            for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
+            resto = (soma * 10) % 11;
+            if (resto === 10 || resto === 11) resto = 0;
+            if (resto !== parseInt(cpf.substring(9, 10))) return false;
+
+            soma = 0;
+            for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
+            resto = (soma * 10) % 11;
+            if (resto === 10 || resto === 11) resto = 0;
+            return resto === parseInt(cpf.substring(10, 11));
+        }
+
+        function checkCPF() {
+            const cpfField = document.getElementById("cpf");
+            const cpf = cpfField.value;
+            const feedback = document.getElementById("cpfFeedback");
+
+            if (cpf === "") {
+                feedback.textContent = "";
+                feedback.classList.remove("invalid", "valid");
+                return;
+            }
+
+            if (validarCPF(cpf)) {
+                feedback.textContent = "CPF válido.";
+                feedback.classList.add("valid");
+                feedback.classList.remove("invalid");
+            } else {
+                feedback.textContent = "CPF inválido. Verifique os dados inseridos.";
+                feedback.classList.add("invalid");
+                feedback.classList.remove("valid");
+            }
+        }
+		
+		function validarEMAIL(email) {
+			// Expressão regular para validar formato de e-mail
+			const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    		return regex.test(email);
+		}
+
+  	</script>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">SEU TITULO</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+
+<div class="form-container mt-5">
+    <h2>Redefinição de Senha</h2>
+    <form method="post" action="gerar_codigo.php">
+        <!-- Campo CPF -->
+        <div class="mb-3">
+            <label for="cpf" class="form-label">Login (CPF)</label>
+            <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite seu CPF. Somente n&uacute;meros" required oninput="checkCPF()">
+            <div id="cpfFeedback" class="feedback"></div>
+        </div>
+
+         <!-- Campo Email -->
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email" required>
+        </div>
+
+        <!-- Botão de Cadastro -->
+        <button type="submit" class="btn btn-primary w-100" id="submitBtn" disabled>Redefinir</button>
+		<a href="javascript: history.go(-1)" class="btn btn-secondary w-100 mt-2">Voltar</a>
+	</form>
+</div>
+
+<script src="captiveportal-bootstrap.bundle.min.js"></script>
+<script>
+	function checkFormValidity() {
+		const cpf = document.getElementById("cpf").value.trim();
+		const email = document.getElementById("email").value.trim();
+		const botao = document.getElementById("submitBtn");
+
+		const cpfValido = validarCPF(cpf);
+		const emailValido = validarEMAIL(email);
+		
+		if (cpfValido && emailValido) {
+			botao.removeAttribute("disabled");
+		} else {
+			botao.setAttribute("disabled", "disabled");
+		}
+	}
+
+	// Adiciona eventos para disparar a validação sempre que os campos forem alterados
+	document.getElementById("cpf").addEventListener("input", checkFormValidity);
+	document.getElementById("email").addEventListener("input", checkFormValidity);
+	
+	// Chama a validação ao carregar a página
+    window.onload = checkFormValidity;
+</script>
+</body>
+</html>

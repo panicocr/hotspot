@@ -1,0 +1,35 @@
+import mysql.connector
+import time
+
+# Conectar ao banco de dados
+conn = mysql.connector.connect(
+    host="localhost",
+    user="seu_usuario",
+    password="sua_senha",
+    database="seu_banco"
+)
+cursor = conn.cursor()
+
+while True:
+    # Ler a tabela e verificar a condição
+    cursor.execute("SELECT id, status_radcheck FROM radcadastro WHERE status_radcheck = 'false'")
+    resultados = cursor.fetchall()
+
+    for id_registro, status in resultados:
+        print(f"Processando registro ID {id_registro}")
+
+        # Criar registro na segunda tabela
+        cursor.execute("INSERT INTO radcheck (id_origem, mensagem) VALUES (%s, %s)", (id_registro, "Registro criado"))
+        
+        # Atualizar o registro da tabela de origem (opcional)
+        cursor.execute("UPDATE radcadastro SET status_radcheck = 'true' WHERE id = %s", (id_registro,))
+
+        # Confirmar alterações
+        conn.commit()
+
+    # Esperar antes da próxima verificação
+    time.sleep(5)  # Aguarda 5 segundos antes de verificar novamente
+
+# Fechar conexão (nunca chega aqui porque o loop é infinito, mas pode ser adicionado um break)
+cursor.close()
+conn.close()

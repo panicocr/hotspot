@@ -1,0 +1,35 @@
+-- Tabela de cadastro de usuários
+CREATE TABLE IF NOT EXISTS radcadastro (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    data_cadastro DATETIME DEFAULT CURRENT_TIMESTAMP,
+    cpf VARCHAR(11) UNIQUE NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    senha_hash VARCHAR(255) NOT NULL,
+    verificado BOOLEAN DEFAULT FALSE,
+    ativo BOOLEAN DEFAULT TRUE,
+    radcheck_ok BOOLEAN DEFAULT FALSE,
+    ip_solicitante VARCHAR(45)
+);
+-- Tabela de cadastro de códigos
+CREATE TABLE radcodigo (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cpf VARCHAR(14) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    codigo VARCHAR(10) NOT NULL,
+    data_cadastro DATETIME DEFAULT CURRENT_TIMESTAMP,
+    expiracao DATETIME NOT NULL,
+    usado BOOLEAN DEFAULT FALSE,
+    ativacao_conta BOOLEAN DEFAULT FALSE,
+    ativacao_recuperacao BOOLEAN DEFAULT FALSE,
+    ip_solicitante VARCHAR(45),
+    FOREIGN KEY (cpf) REFERENCES radcadastro(cpf)
+);
+
+
+CREATE TABLE radtentativas (
+    cpf VARCHAR(14) PRIMARY KEY,
+    tentativas INT DEFAULT 0,
+    ultimo_erro DATETIME
+);
