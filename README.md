@@ -18,6 +18,8 @@ O projeto surgiu da ideia de um simples sistema de autocadastro para usuários v
 Sistema de Autocadastro criado com ChatGPT. Utiliza o Apache e Mysql. É usado em conjunto com PFSense FreeRadius e Captive Portal.
 A ideia é simples e funcional.
 
+![Diagrama](https://github.com/panicocr/hotspot2/blob/main/diagrama/Diagrama.png)
+
 ## Instalação e Configuração ##
 ### PFSense, Captive Portal e FreeRadius ###
 ### VLAN ###
