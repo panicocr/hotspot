@@ -1,9 +1,9 @@
 # Hotspot - Autocadastro no Captive Portal #
 
-1. [Necessidade](Necessidade)
-2. [Ideia](## Ideia ##)
-3. ChatGPT
-4. Bugs Conhecidos
+1. [Necessidade]()
+2. [Ideia]()
+3. [ChatGPT]()
+4. [Bugs Conhecidos]()
 
 ## Necessidade ##
 O projeto surgiu da ideia de um simples sistema de autocadastro para usuários visitantes da wifi. Não encontramos algo viável e simples no mercado, então criamos um sistema extremamente básico que atende as necessidades levantadas.
