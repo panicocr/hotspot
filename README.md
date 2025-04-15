@@ -24,7 +24,7 @@ A ideia é simples e funcional.
 ### PFSense, Captive Portal e FreeRadius ###
 ### VLAN ###
 ### Apache e MySQL ###
-### Let's Encript ###
+### Let's Encrypt ###
 
 ## Bugs Conhecidos ##
 1. Campo Login (CPF) da tela de cadastro aceita CPF válido com mais caracteres.
