@@ -4,6 +4,7 @@
 2. [Ideia]()
 3. [ChatGPT]()
 4. [Bugs Conhecidos]()
+5. [Features]()
 
 ## Necessidade ##
 O projeto surgiu da ideia de um simples sistema de autocadastro para usuários visitantes da wifi. Não encontramos algo viável e simples no mercado, então criamos um sistema extremamente básico que atende as necessidades levantadas.
@@ -14,14 +15,18 @@ O projeto surgiu da ideia de um simples sistema de autocadastro para usuários v
 > Redefinição de senha;
 
 ## Ideia ##
-
-
 Sistema de Autocadastro criado com ChatGPT. Utiliza o Apache e Mysql. É usado em conjunto com PFSense FreeRadius e Captive Portal.
+A ideia é simples e funcional.
 
-Ideia
-
-Configuração de Captive Porta - PFSense
-Configuração
+## Instalação e Configuração ##
+### PFSense, Captive Portal e FreeRadius ###
+### VLAN ###
+### Apache e MySQL ###
+### Let's Encript ###
 
 ## Bugs Conhecidos ##
 1. Campo Login (CPF) da tela de cadastro aceita CPF válido com mais caracteres.
+
+## Features ##
+1. Fazer tela de Logout.
+2. Criptografia de Senha em BD.
