@@ -1,6 +1,6 @@
 # Hotspot - Autocadastro no Captive Portal #
 
-1. [Necessidade](## Necessidade ##)
+1. [Necessidade](Necessidade)
 2. [Ideia](## Ideia ##)
 3. ChatGPT
 4. Bugs Conhecidos
