@@ -2,9 +2,10 @@
 
 1. [Necessidade]()
 2. [Ideia]()
-3. [ChatGPT]()
-4. [Bugs Conhecidos]()
-5. [Features]()
+3. [Instalação e Configuração]
+4. [ChatGPT]()
+5. [Bugs Conhecidos]()
+6. [Features]()
 
 ## Necessidade ##
 O projeto surgiu da ideia de um simples sistema de autocadastro para usuários visitantes da wifi. Não encontramos algo viável e simples no mercado, então criamos um sistema extremamente básico que atende as necessidades levantadas.
@@ -22,6 +23,12 @@ A ideia é simples e funcional.
 
 ## Instalação e Configuração ##
 ### PFSense, Captive Portal e FreeRadius ###
+## Páginas do Captive Portal PFSense ##
+São 3 as páginas que vamos utilizar para o Captive Portal do PFSense.
+Vamos ativar a opção para utilização dessas páginas customizadas.
+Dentro das configurações do Captive Portal -- Configuration -- Captive Portal Configuration --
+
+Alteradas as páginas conforme necessidade, basta configurará-las cada um
 ### VLAN ###
 ### Apache e MySQL ###
 ### Let's Encrypt ###
