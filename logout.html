@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEU TITULO</title>
+    <link href="captiveportal-bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('captiveportal-bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">SEU TITULO</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+
+<div class="form-container mt-5">
+    <h2>SEU TITULO</h2>
+	<h2><img src="captiveportal-logo.png" alt="" width="90" height="90"></h2>
+    <form method="post" action="<?=$logouturl;?>">
+        <!-- Botão de Logout -->
+        <input type="hidden" class="btn btn-primary w-100 mb-3" name="logout_id" value="<?=$sessionid;?>">
+		<input type="hidden" class="btn btn-primary w-100 mb-3" name="zone" value="<?=$cpzone;?>">
+		<input type="submit" class="btn btn-primary w-100 mb-3" name="logout" value="Desconectar">
+    </form>
+</div>
+
+<script src="captiveportal-bootstrap.bundle.min.js"></script>
+<script>
+</script>
+</body>
+</html>
