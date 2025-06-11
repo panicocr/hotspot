@@ -5,7 +5,7 @@
 3. [Instalação e Configuração]()
 4. [ChatGPT]()
 5. [Bugs Conhecidos]()
-6. [Features]()
+6. [Roadmap]()
 
 ## Necessidade ##
 O projeto surgiu da ideia de um simples sistema de autocadastro para usuários visitantes da wifi. Não encontramos algo viável e simples no mercado, então criamos um sistema extremamente básico que atende as necessidades levantadas.
@@ -46,7 +46,9 @@ Alteradas as páginas conforme necessidade, basta configurará-las cada um
 
 ## Bugs Conhecidos ##
 1. Campo Login (CPF) da tela de cadastro aceita CPF válido com mais caracteres.
+2. Campo Login (CPF) da tela de cadastro aceita CPF com pontos.
 
-## Features ##
-1. Fazer tela de Logout.
-2. Criptografia de Senha em BD.
+## Roadmap ##
+1. - [x] Fazer tela de Logout.
+2. - [] Criptografia de Senha em BD.
+3. - [] Fazer tela menor para ser mais compatível com celulares.
