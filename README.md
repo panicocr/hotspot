@@ -30,12 +30,11 @@ Dentro das configurações:
 
 ```
 Captive Portal -- Configuration -- Captive Portal Configuration -- Use custom captive portal page
+```
 ![Diagrama](https://github.com/panicocr/hotspot2/blob/main/diagrama/CaptivePortal1.png)
 Captive Portal -- Configuration -- HTML Page Contents -- Portal page contents
 Captive Portal -- Configuration -- HTML Page Contents -- Auth error page contents
 Captive Portal -- Configuration -- HTML Page Contents -- Logout page contents
-```
-
 
 Alteradas as páginas conforme necessidade, basta configurará-las cada um
 ### VLAN ###
