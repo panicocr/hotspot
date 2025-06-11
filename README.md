@@ -2,7 +2,7 @@
 
 1. [Necessidade]()
 2. [Ideia]()
-3. [Instalação e Configuração]
+3. [Instalação e Configuração]()
 4. [ChatGPT]()
 5. [Bugs Conhecidos]()
 6. [Features]()
@@ -24,9 +24,15 @@ A ideia é simples e funcional.
 ## Instalação e Configuração ##
 ### PFSense, Captive Portal e FreeRadius ###
 ## Páginas do Captive Portal PFSense ##
-São 3 as páginas que vamos utilizar para o Captive Portal do PFSense.
-Vamos ativar a opção para utilização dessas páginas customizadas.
-Dentro das configurações do Captive Portal -- Configuration -- Captive Portal Configuration --
+São 3 páginas que vamos utilizar para o Captive Portal do PFSense.
+Vamos ativar as opções para utilização dessas páginas customizadas.
+Dentro das configurações:
+# Captive Portal -- Configuration -- Captive Portal Configuration -- Use custom captive portal page
+![Diagrama](https://github.com/panicocr/hotspot2/blob/main/diagrama/CaptivePortal1.png)
+# Captive Portal -- Configuration -- HTML Page Contents -- Portal page contents
+# Captive Portal -- Configuration -- HTML Page Contents -- Auth error page contents
+# Captive Portal -- Configuration -- HTML Page Contents -- Logout page contents
+
 
 Alteradas as páginas conforme necessidade, basta configurará-las cada um
 ### VLAN ###
