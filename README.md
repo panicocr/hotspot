@@ -24,7 +24,7 @@ A ideia é simples e funcional.
 ## Instalação e Configuração ##
 ### PFSense, Captive Portal e FreeRadius ###
 ## Páginas do Captive Portal PFSense ##
-São 3 páginas que vamos utilizar para o Captive Portal do PFSense.
+São 3 páginas que vamos utilizar para o Captive Portal do PFSense. Todas as páginas estão em um padrão. Para alterá-las basta mudar conforme sua necessidade.
 Vamos ativar as opções para utilização dessas páginas customizadas.
 > [!TIP]
 > Todas as configurações devem ser feitar no Menu **Services** -- **Captive Portal**. Selecione o ecossistema de interesse para configuração.
@@ -50,7 +50,8 @@ Na aba
 > [!TIP]
 > Dica para você fazer de prima.
 
-Alteradas as páginas conforme necessidade, basta configurará-las cada um
+Agora vamos traduzir os erros que são apresentados na tela de avisos e erros.
+
 ### VLAN ###
 ### Apache e MySQL ###
 ### Let's Encrypt ###
