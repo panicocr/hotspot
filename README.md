@@ -36,6 +36,9 @@ Captive Portal -- Configuration -- HTML Page Contents -- Portal page contents
 Captive Portal -- Configuration -- HTML Page Contents -- Auth error page contents
 Captive Portal -- Configuration -- HTML Page Contents -- Logout page contents
 
+> [!TIP]
+> Dica para você fazer de prima.
+
 Alteradas as páginas conforme necessidade, basta configurará-las cada um
 ### VLAN ###
 ### Apache e MySQL ###
