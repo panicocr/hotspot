@@ -26,16 +26,27 @@ A ideia é simples e funcional.
 ## Páginas do Captive Portal PFSense ##
 São 3 páginas que vamos utilizar para o Captive Portal do PFSense.
 Vamos ativar as opções para utilização dessas páginas customizadas.
-Dentro das configurações:
+> [!TIP]
+> Todas as configurações devem ser feitar no Menu **Services** -- **Captive Portal**. Selecione o ecossistema de interesse para configuração.
 
 ```
 Captive Portal -- Configuration -- Captive Portal Configuration -- Use custom captive portal page
 ```
 ![Diagrama](https://github.com/panicocr/hotspot2/blob/main/diagrama/CaptivePortal1.png)
+Ative o campo.
+```
 Captive Portal -- Configuration -- HTML Page Contents -- Portal page contents
+```
+Adicione o arquivo _index.html_
+```
 Captive Portal -- Configuration -- HTML Page Contents -- Auth error page contents
+```
+Adicione o arquivo _error.html_
+```
 Captive Portal -- Configuration -- HTML Page Contents -- Logout page contents
-
+```
+Adicione o arquivo _logout.html_
+Na aba 
 > [!TIP]
 > Dica para você fazer de prima.
 
