@@ -19,7 +19,7 @@ O projeto surgiu da ideia de um simples sistema de autocadastro para usuários v
 Sistema de Autocadastro criado com ChatGPT. Utiliza o Apache e Mysql. É usado em conjunto com PFSense FreeRadius e Captive Portal.
 A ideia é simples e funcional.
 
-![Diagrama](https://github.com/panicocr/hotspot2/blob/main/diagrama/Diagrama.png)
+![Diagrama](https://github.com/panicocr/hotspot2/blob/main/diagramas/Diagrama.png)
 
 ## Instalação e Configuração ##
 ### PFSense, Captive Portal e FreeRadius ###
@@ -32,7 +32,7 @@ Vamos ativar as opções para utilização dessas páginas customizadas.
 ```
 Captive Portal -- Configuration -- Captive Portal Configuration -- Use custom captive portal page
 ```
-![Diagrama](https://github.com/panicocr/hotspot2/blob/main/diagrama/CaptivePortal1.png)
+![Diagrama](https://github.com/panicocr/hotspot2/blob/main/diagramas/CaptivePortal1.png)
 Ative o campo.
 ```
 Captive Portal -- Configuration -- HTML Page Contents -- Portal page contents
