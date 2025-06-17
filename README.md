@@ -52,6 +52,12 @@ Na aba
 
 Agora vamos traduzir os erros que são apresentados na tela de avisos e erros.
 
+Acesse o servidor PFSense via ssh e acesse o arquivo /usr/local/captiveportal/index.php
+Encontre e traduza os seguintes textos:
+"Invalid credentials specified." -- Credenciais Inválidas
+
+
+
 ### VLAN ###
 ### Apache e MySQL ###
 ### Let's Encrypt ###
