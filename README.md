@@ -27,7 +27,7 @@ A ideia é simples e funcional.
 São 3 páginas que vamos utilizar para o Captive Portal do PFSense. Todas as páginas estão em um padrão. Para alterá-las basta mudar conforme sua necessidade.
 Vamos ativar as opções para utilização dessas páginas customizadas.
 > [!TIP]
-> Todas as configurações devem ser feitar no Menu **Services** -- **Captive Portal**. Selecione o ecossistema de interesse para configuração.
+> Todas as configurações devem ser feitas no Menu **Services** -- **Captive Portal**. Selecione o ecossistema de interesse para configuração.
 
 ```
 Captive Portal -- Configuration -- Captive Portal Configuration -- Use custom captive portal page
