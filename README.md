@@ -8,7 +8,7 @@
 6. [Roadmap]()
 
 ## Necessidade ##
-O projeto surgiu da ideia de um simples sistema de autocadastro para usuários visitantes da wifi. Não encontramos algo viável e simples no mercado, então criamos um sistema extremamente básico que atende as necessidades levantadas.
+O projeto surgiu da ideia de um simples sistema de autocadastro para usuários visitantes da wifi, que atenda o Marco Civil da Internet. Não encontramos algo viável e simples no mercado, então criamos um sistema extremamente básico que atende as necessidades levantadas.
 > Interface simples para autocadastro de usuário;
 > 
 > Registro de Login;
