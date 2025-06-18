@@ -23,7 +23,7 @@ A ideia é simples e funcional.
 
 ## Instalação e Configuração ##
 ### PFSense, Captive Portal e FreeRadius ###
-## Páginas do Captive Portal PFSense ##
+### Páginas do Captive Portal PFSense ###
 São 3 páginas que vamos utilizar para o Captive Portal do PFSense. Todas as páginas estão em um padrão. Para alterá-las basta mudar conforme sua necessidade.
 Vamos ativar as opções para utilização dessas páginas customizadas.
 > [!TIP]
