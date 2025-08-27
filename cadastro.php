@@ -55,6 +55,8 @@
 
         function checkCPF() {
             const cpfField = document.getElementById("cpf");
+			// 🔒 Garante que só números fiquem no campo
+			cpfField.value = cpfField.value.replace(/\D/g, ''); 
             const cpf = cpfField.value;
             const feedback = document.getElementById("cpfFeedback");
 
@@ -80,10 +82,10 @@
             const confirmSenha = document.getElementById("confirmSenha").value;
             const feedback = document.getElementById("passwordFeedback");
 
-            const senhaValida = /^(?=.*[a-zA-Z])(?=.*\d).{8,}$/.test(senha);
+            const senhaValida = /^.{8,}$/.test(senha);
 
             if (!senhaValida) {
-                feedback.textContent = "A senha deve ter pelo menos 8 caracteres, incluindo letras e números.";
+                feedback.textContent = "A senha deve ter pelo menos 8 caracteres.";
                 feedback.classList.add("invalid");
                 feedback.classList.remove("valid");
             } else if (confirmSenha === "") {
@@ -100,7 +102,7 @@
         }
 		
 		function validarSenha(senha) {
-			return /^(?=.*[a-zA-Z])(?=.*\d).{8,}$/.test(senha);
+			return /^.{8,}$/.test(senha);
 		}
 
         function togglePasswordVisibility(checkboxId, inputId) {
@@ -127,15 +129,15 @@
     <form method="post" action="cadastro_process.php">
         <!-- Campo CPF -->
         <div class="mb-3">
-            <label for="cpf" class="form-label">Login (CPF)</label>
+            <label for="cpf" class="form-label"><b>Login (CPF - SOMENTE N&Uacute;MEROS)</b></label>
             <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite seu CPF. Somente n&uacute;meros" required oninput="checkCPF()">
             <div id="cpfFeedback" class="feedback"></div>
         </div>
 
         <!-- Campo Nome -->
         <div class="mb-3">
-            <label for="nome" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" required>
+            <label for="nome" class="form-label">Nome Completo</label>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome completo" required>
         </div>
 
         <!-- Campo Email -->
@@ -147,7 +149,7 @@
         <!-- Campo Senha -->
         <div class="mb-3">
             <label for="senha" class="form-label">Senha</label>
-            <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha" required minlength="8" pattern="^(?=.*[a-zA-Z])(?=.*\d).{8,}$" oninput="checkPasswords()">
+            <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha de no mínimo 8 dígitos" required minlength="8" pattern="^(?=.*[a-zA-Z])(?=.*\d).{8,}$" oninput="checkPasswords()">
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="toggleSenha" onclick="togglePasswordVisibility('toggleSenha', 'senha')">
                 <label class="form-check-label" for="toggleSenha">Mostrar senha</label>
@@ -157,7 +159,7 @@
         <!-- Campo Confirmação de Senha -->
         <div class="mb-3">
             <label for="confirmSenha" class="form-label">Confirme a Senha</label>
-            <input type="password" class="form-control" id="confirmSenha" name="confirmSenha" placeholder="Confirme sua senha" required oninput="checkPasswords()">
+            <input type="password" class="form-control" id="confirmSenha" name="confirmSenha" placeholder="Confirme sua senha de no mínimo 8 dígitos" required oninput="checkPasswords()">
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="toggleConfirmSenha" onclick="togglePasswordVisibility('toggleConfirmSenha', 'confirmSenha')">
                 <label class="form-check-label" for="toggleConfirmSenha">Mostrar senha</label>
@@ -169,7 +171,7 @@
         <div class="form-check mb-3">
             <input class="form-check-input" type="checkbox" id="aceiteTermos" name="aceiteTermos" required>
             <label class="form-check-label" for="aceiteTermos">
-                Aceito os <a href="seutermodeusoeprivacidade.pdf" target="_blank">termos de uso e privacidade</a>.
+                Aceito os <a href="SEUTERMODEUSO.pdf" target="_blank">termos de uso e privacidade</a>.
             </label>
         </div>
 
