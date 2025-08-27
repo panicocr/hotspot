@@ -68,7 +68,7 @@ $errormsg = gettext("Login ou Senha Inválidos.");
 ### Let's Encrypt ###
 
 ## Bugs Conhecidos ##
-1. Campo Login (CPF) da tela de cadastro aceita CPF válido com mais caracteres.
+1. Campo Login (CPF) da tela de cadastro aceita CPF válido com mais caracteres.  
 ~~2. Campo Login (CPF) da tela de cadastro aceita CPF com pontos.~~ (Resolvido no portal e no cadastro)
 3. Quando usa Voucher ele pede obrigação de CPF.
 
