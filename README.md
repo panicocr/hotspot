@@ -76,3 +76,4 @@ $errormsg = gettext("Login ou Senha Inválidos.");
 1. - [x] Fazer tela de Logout.
 2. - [] Criptografia de Senha em BD.
 3. - [X] Fazer tela menor para ser mais compatível com celulares.
+4. - [X] Retirada necessidade mistura de caracteres em senha.
