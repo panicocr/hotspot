@@ -28,6 +28,48 @@
             text-align: center;
         }
     </style>
+	<script>
+        function validarCPF(auth_user) {
+            cpf = cpf.replace(/[^\d]+/g, ''); // Remove caracteres não numéricos
+            if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false; // Verifica tamanho e sequência
+
+            let soma = 0, resto;
+            for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
+            resto = (soma * 10) % 11;
+            if (resto === 10 || resto === 11) resto = 0;
+            if (resto !== parseInt(cpf.substring(9, 10))) return false;
+
+            soma = 0;
+            for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
+            resto = (soma * 10) % 11;
+            if (resto === 10 || resto === 11) resto = 0;
+            return resto === parseInt(cpf.substring(10, 11));
+        }
+
+        function checkCPF() {
+            const cpfField = document.getElementById("auth_user");
+			// ?? Garante que só números fiquem no campo
+			cpfField.value = cpfField.value.replace(/\D/g, ''); 
+            const cpf = cpfField.value;
+            const feedback = document.getElementById("cpfFeedback");
+
+            if (cpf === "") {
+                feedback.textContent = "";
+                feedback.classList.remove("invalid", "valid");
+                return;
+            }
+
+            if (validarCPF(cpf)) {
+                feedback.textContent = "CPF válido.";
+                feedback.classList.add("valid");
+                feedback.classList.remove("invalid");
+            } else {
+                feedback.textContent = "CPF inválido. Verifique os dados inseridos.";
+                feedback.classList.add("invalid");
+                feedback.classList.remove("valid");
+            }
+        }
+	</script>
 </head>
 <body>
 
@@ -42,30 +84,30 @@
 </nav>
 
 <div class="form-container mt-5">
-    <h2>SEU TITULO</h2>
+    <!--<h2>SEU TITULO</h2>-->
 	<h2><img src="captiveportal-logo.png" alt="" width="90" height="90"></h2>
+	<h3><strong>Seja Bem-vindo!</strong><br></h3><h6><p style="text-align: justify;">O uso da internet exige um cadastro simples e r&aacute;pido. N&atilde;o tem cadastro ainda? <br><a href="https://cadastro.com.br/">Cadastre-se clicando aqui</a>.</h6></p>
     <form method="post" action="$PORTAL_ACTION$">
         <!-- Campo de Login -->
         <div class="mb-3">
-            <label for="auth_user" class="form-label">Login (CPF)</label>
-            <input type="text" class="form-control" id="auth_user" name="auth_user" placeholder="Digite seu CPF. Somente n&uacute;meros">
+            <label for="auth_user" class="form-label"><b>Login (CPF - SOMENTE N&Uacute;MEROS)</b></label>
+            <input type="text" class="form-control" id="auth_user" name="auth_user" placeholder="Digite seu CPF. Somente n&uacute;meros" oninput="checkCPF()"
         </div>
 
         <!-- Campo de Senha -->
         <div class="mb-3">
-            <label for="auth_pass" class="form-label">Senha</label>
+            <label for="auth_pass" class="form-label"><b>Senha</b></label>
             <input type="password" class="form-control" id="auth_pass" name="auth_pass" placeholder="Digite sua senha" autocomplete="off">
             <div class="form-check mt-2">
                 <input class="form-check-input" type="checkbox" id="showPassword">
                 <label class="form-check-label" for="showPassword">Mostrar senha</label>
             </div>
             <div class="mt-2">
-                <a href="https://suaurldecadastro/esqueci.html" class="text-decoration-none">Esqueci minha senha</a>
+                <a href="https://cadastro.com.br/esqueci.html" class="text-decoration-none">Esqueci minha senha</a>
             </div>
         </div>
 
         <div class="text-center mb-2">ou</div>
-
         <!-- Campo de Voucher -->
         <div class="mb-3">
             <label for="auth_voucher" class="form-label">Voucher</label>
@@ -80,7 +122,7 @@
         <div class="form-check mb-3">
             <input class="form-check-input" type="checkbox" id="aceiteTermos" name="aceiteTermos" required>
             <label class="form-check-label" for="aceiteTermos">
-                Aceito os <a href="seutermodeusoeprivacidade.pdf" target="_blank">termos de uso e privacidade</a>
+                Aceito os <a href="seutermodeuso.pdf" target="_blank">termos de uso e privacidade</a>
             </label>
         </div>
 
@@ -88,7 +130,7 @@
         <input type="submit" class="btn btn-primary w-100 mb-3" name="accept" value="Entrar">
 
         <!-- Botão de Cadastro -->
-        <a href="https://suaurldecadastro/" class="btn btn-secondary w-100">Cadastrar novo login</a>
+        <!-- <a href="https://cadastro.com.br/" class="btn btn-secondary w-100">Cadastrar novo login</a> -->
     </form>
 </div>
 
