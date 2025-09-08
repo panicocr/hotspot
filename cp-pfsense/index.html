@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEU TITULO</title>
     <link href="captiveportal-bootstrap.min.css" rel="stylesheet">
+	<!-- Ícones do Bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         body {
             display: flex;
@@ -86,24 +88,25 @@
 <div class="form-container mt-5">
     <!--<h2>SEU TITULO</h2>-->
 	<h2><img src="captiveportal-logo.png" alt="" width="90" height="90"></h2>
-	<h3><strong>Seja Bem-vindo!</strong><br></h3><h6><p style="text-align: justify;">O uso da internet exige um cadastro simples e r&aacute;pido. N&atilde;o tem cadastro ainda? <br><a href="https://cadastro.com.br/">Cadastre-se clicando aqui</a>.</h6></p>
+	<h3><strong>Seja Bem-vindo!</strong><br></h3><h6><p style="text-align: justify;">O uso da internet exige um cadastro simples e r&aacute;pido. N&atilde;o tem cadastro ainda? <br><a href="https://cadastro.dominio.sc.gov.br/">Cadastre-se clicando aqui</a>.</h6></p>
     <form method="post" action="$PORTAL_ACTION$">
         <!-- Campo de Login -->
         <div class="mb-3">
-            <label for="auth_user" class="form-label"><b>Login (CPF - SOMENTE N&Uacute;MEROS)</b></label>
-            <input type="text" class="form-control" id="auth_user" name="auth_user" placeholder="Digite seu CPF. Somente n&uacute;meros" oninput="checkCPF()"
+            <label for="auth_user" class="form-label"><b>Usu&aacute;rio (CPF - SOMENTE N&Uacute;MEROS)</b></label>
+            <input type="text" class="form-control" id="auth_user" name="auth_user" maxlength="11" placeholder="Digite seu CPF. Somente n&uacute;meros" oninput="checkCPF()"
         </div>
 
         <!-- Campo de Senha -->
         <div class="mb-3">
             <label for="auth_pass" class="form-label"><b>Senha</b></label>
-            <input type="password" class="form-control" id="auth_pass" name="auth_pass" placeholder="Digite sua senha" autocomplete="off">
-            <div class="form-check mt-2">
-                <input class="form-check-input" type="checkbox" id="showPassword">
-                <label class="form-check-label" for="showPassword">Mostrar senha</label>
-            </div>
+			<div class="input-group">
+			<input type="password" class="form-control" id="auth_pass" name="auth_pass" placeholder="Digite sua senha" autocomplete="off">
+			<button class="btn btn-outline-secondary" type="button" id="togglePassword">
+				<i class="bi bi-eye"></i>
+			</button>
+		    </div>
             <div class="mt-2">
-                <a href="https://cadastro.com.br/esqueci.html" class="text-decoration-none">Esqueci minha senha</a>
+                <a href="https://cadastro.dominio.sc.gov.br/esqueci.html" class="text-decoration-none">Esqueci minha senha</a>
             </div>
         </div>
 
@@ -122,7 +125,7 @@
         <div class="form-check mb-3">
             <input class="form-check-input" type="checkbox" id="aceiteTermos" name="aceiteTermos" required>
             <label class="form-check-label" for="aceiteTermos">
-                Aceito os <a href="seutermodeuso.pdf" target="_blank">termos de uso e privacidade</a>
+                Aceito os <a href="captiveportal-SEUTERMODEPRIVACIDADE.pdf" target="_blank">termos de uso e privacidade</a>
             </label>
         </div>
 
@@ -130,16 +133,33 @@
         <input type="submit" class="btn btn-primary w-100 mb-3" name="accept" value="Entrar">
 
         <!-- Botão de Cadastro -->
-        <!-- <a href="https://cadastro.com.br/" class="btn btn-secondary w-100">Cadastrar novo login</a> -->
+        <!-- <a href="https://cadastro.dominio.sc.gov.br/" class="btn btn-secondary w-100">Cadastrar novo login</a> -->
     </form>
 </div>
 
 <script src="captiveportal-bootstrap.bundle.min.js"></script>
 <script>
-    document.getElementById('showPassword').addEventListener('change', function() {
-        const passwordField = document.getElementById('auth_pass');
-        passwordField.type = this.checked ? 'text' : 'password';
-    });
+  const togglePassword = document.querySelector("#togglePassword");
+  const auth_pass = document.querySelector("#auth_pass");
+  const icon = togglePassword.querySelector("i");
+
+  togglePassword.addEventListener("click", function () {
+    const type = auth_pass.getAttribute("type") === "password" ? "text" : "password";
+    auth_pass.setAttribute("type", type);
+
+    // Alterna o ícone
+    icon.classList.toggle("bi-eye");
+    icon.classList.toggle("bi-eye-slash");
+	
+	    // Alterna cor do botão (azul quando ativo)
+    if (type === "text") {
+      togglePassword.classList.remove("btn-outline-secondary");
+      togglePassword.classList.add("btn-primary");
+    } else {
+      togglePassword.classList.remove("btn-primary");
+      togglePassword.classList.add("btn-outline-secondary");
+    }
+  });
 </script>
 </body>
 </html>
