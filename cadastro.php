@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEU TITULO</title>
     <link href="captiveportal-bootstrap.min.css" rel="stylesheet">
+	<!-- Ícones do Bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         body {
             display: flex;
@@ -129,8 +131,8 @@
     <form method="post" action="cadastro_process.php">
         <!-- Campo CPF -->
         <div class="mb-3">
-            <label for="cpf" class="form-label"><b>Login (CPF - SOMENTE N&Uacute;MEROS)</b></label>
-            <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite seu CPF. Somente n&uacute;meros" required oninput="checkCPF()">
+            <label for="cpf" class="form-label"><b>Usu&aacute;rio (CPF - SOMENTE N&Uacute;MEROS)</b></label>
+            <input type="text" class="form-control" id="cpf" name="cpf" maxlength="11" placeholder="Digite seu CPF. Somente n&uacute;meros" required oninput="checkCPF()">
             <div id="cpfFeedback" class="feedback"></div>
         </div>
 
@@ -149,21 +151,23 @@
         <!-- Campo Senha -->
         <div class="mb-3">
             <label for="senha" class="form-label">Senha</label>
-            <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha de no mínimo 8 dígitos" required minlength="8" pattern="^(?=.*[a-zA-Z])(?=.*\d).{8,}$" oninput="checkPasswords()">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="toggleSenha" onclick="togglePasswordVisibility('toggleSenha', 'senha')">
-                <label class="form-check-label" for="toggleSenha">Mostrar senha</label>
-            </div>
+            <div class="input-group">
+			<input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha de no mínimo 8 dígitos" required minlength="8" oninput="checkPasswords()">
+            <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+				<i class="bi bi-eye"></i>
+			</button>
+		    </div>
         </div>
 
         <!-- Campo Confirmação de Senha -->
         <div class="mb-3">
             <label for="confirmSenha" class="form-label">Confirme a Senha</label>
-            <input type="password" class="form-control" id="confirmSenha" name="confirmSenha" placeholder="Confirme sua senha de no mínimo 8 dígitos" required oninput="checkPasswords()">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="toggleConfirmSenha" onclick="togglePasswordVisibility('toggleConfirmSenha', 'confirmSenha')">
-                <label class="form-check-label" for="toggleConfirmSenha">Mostrar senha</label>
-            </div>
+            <div class="input-group">
+			<input type="password" class="form-control" id="confirmSenha" name="confirmSenha" placeholder="Confirme sua senha de no mínimo 8 dígitos" required oninput="checkPasswords()">
+			<!--<button class="btn btn-outline-secondary" type="button" id="togglePassword">
+				<!-- <i class="bi bi-eye"></i>
+			</button> -->
+		    </div>
             <div id="passwordFeedback" class="feedback"></div>
         </div>
 
@@ -171,7 +175,7 @@
         <div class="form-check mb-3">
             <input class="form-check-input" type="checkbox" id="aceiteTermos" name="aceiteTermos" required>
             <label class="form-check-label" for="aceiteTermos">
-                Aceito os <a href="SEUTERMODEUSO.pdf" target="_blank">termos de uso e privacidade</a>.
+                Aceito os <a href="captiveportal-seutermodeprivacidade" target="_blank">termos de uso e privacidade</a>.
             </label>
         </div>
 
@@ -209,6 +213,39 @@
 	
 	// Chama a validação ao carregar a página
     window.onload = checkFormValidity;
+	
+	const togglePassword = document.querySelector("#togglePassword");
+	const senha = document.querySelector("#senha");
+	const confirmSenha = document.querySelector("#confirmSenha");
+	const icon = togglePassword.querySelector("i");
+
+	togglePassword.addEventListener("click", function () {
+		const type = senha.getAttribute("type") === "password" ? "text" : "password";
+		senha.setAttribute("type", type);
+		
+		const type2 = confirmSenha.getAttribute("type") === "password" ? "text" : "password";
+		confirmSenha.setAttribute("type", type2);
+
+		// Alterna o ícone
+		icon.classList.toggle("bi-eye");
+		icon.classList.toggle("bi-eye-slash");
+		
+			// Alterna cor do botão (azul quando ativo)
+		if (type === "text") {
+		  togglePassword.classList.remove("btn-outline-secondary");
+		  togglePassword.classList.add("btn-primary");
+		} else {
+		  togglePassword.classList.remove("btn-primary");
+		  togglePassword.classList.add("btn-outline-secondary");
+		}
+		if (type2 === "text") {
+		  togglePassword.classList.remove("btn-outline-secondary");
+		  togglePassword.classList.add("btn-primary");
+		} else {
+		  togglePassword.classList.remove("btn-primary");
+		  togglePassword.classList.add("btn-outline-secondary");
+		}
+	});
 </script>
 </body>
 </html>
