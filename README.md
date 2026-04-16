@@ -72,7 +72,7 @@ $errormsg = gettext("Login ou Senha Inválidos.");
 ~~2. Campo Login (CPF) da tela de cadastro aceita CPF com pontos.~~ (Resolvido no portal e no cadastro)
 ~~3. Quando usa Voucher ele pede obrigação de CPF.~~ (Resolvido retirado o required)
 4. IOS tem problema para acessar link do sistema de Código para Redifinição de Senha. Quando acessa Link ele desconecta da Rede Sem Fio.
-5. Problema com acesso ao sistema de e-mail para recuperação de senha.
+5. Problema com acesso ao sistema de e-mail para recuperação de senha pois não sabemos todos os domínios a liberar sem autenticação.
 
 ## Roadmap ##
 1. - [x] Fazer tela de Logout.
