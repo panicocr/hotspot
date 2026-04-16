@@ -132,7 +132,7 @@
         <!-- Campo CPF -->
         <div class="mb-3">
             <label for="cpf" class="form-label"><b>Usu&aacute;rio (CPF - SOMENTE N&Uacute;MEROS)</b></label>
-            <input type="text" class="form-control" id="cpf" name="cpf" maxlength="11" placeholder="Digite seu CPF. Somente n&uacute;meros" required oninput="checkCPF()">
+            <input type="text" inputmode="numeric" class="form-control" id="cpf" name="cpf" maxlength="11" placeholder="Digite seu CPF. Somente n&uacute;meros" required oninput="checkCPF()">
             <div id="cpfFeedback" class="feedback"></div>
         </div>
 
