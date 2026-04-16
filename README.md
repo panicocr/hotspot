@@ -68,10 +68,11 @@ $errormsg = gettext("Login ou Senha Inválidos.");
 ### Let's Encrypt ###
 
 ## Bugs Conhecidos ##
-1. Campo Login (CPF) da tela de cadastro aceita CPF válido com mais caracteres.  
+~~1. Campo Login (CPF) da tela de cadastro aceita CPF válido com mais caracteres.~~ (Resolvido)
 ~~2. Campo Login (CPF) da tela de cadastro aceita CPF com pontos.~~ (Resolvido no portal e no cadastro)
 ~~3. Quando usa Voucher ele pede obrigação de CPF.~~ (Resolvido retirado o required)
 4. IOS tem problema para acessar link do sistema de Código para Redifinição de Senha. Quando acessa Link ele desconecta da Rede Sem Fio.
+5. Problema com acesso ao sistema de e-mail para recuperação de senha.
 
 ## Roadmap ##
 1. - [x] Fazer tela de Logout.
@@ -80,3 +81,4 @@ $errormsg = gettext("Login ou Senha Inválidos.");
 4. - [X] Retirada necessidade mistura de caracteres em senha.
 5. - [ ] Ajustar tela Pedido de Redifinição de Senha. Campo CPF aceita tudo. Restringir a 11 números.
 6. - [ ] Integrar com gov.br.
+7. - [X] Abrir teclado numpérico para CPF (Sugestão do Sr. Gessner).
