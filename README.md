@@ -81,4 +81,4 @@ $errormsg = gettext("Login ou Senha Inválidos.");
 4. - [X] Retirada necessidade mistura de caracteres em senha.
 5. - [ ] Ajustar tela Pedido de Redifinição de Senha. Campo CPF aceita tudo. Restringir a 11 números.
 6. - [ ] Integrar com gov.br.
-7. - [X] Abrir teclado numpérico para CPF (Sugestão do Sr. Gessner).
+7. - [X] Abrir teclado numérico para CPF (Sugestão do Sr. Gessner).
